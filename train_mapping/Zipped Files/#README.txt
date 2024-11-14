@@ -1,1 +1,0 @@
-Subdirectory for zipped .geojson files
