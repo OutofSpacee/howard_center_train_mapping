@@ -1,0 +1,101 @@
+/* General styles */
+input[type="number"] {
+    max-width: 80%;
+}
+
+div.outer {
+    position: fixed;
+    top: 41px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+body, label, input, button, select { 
+    font-family: 'Helvetica Neue', Helvetica;
+    font-weight: 200;
+}
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+/* Panel styling */
+.panel.panel-default {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Rail line controls */
+#controls.panel.panel-default {
+    opacity: 0.65; /* Initial opacity */
+    cursor: move;
+    transition: opacity 500ms 1s;
+}
+
+#controls.panel.panel-default:hover {
+    opacity: 0.95; /* Opacity on hover */
+    transition-delay: 0;
+}
+
+/* Selected rail lines panel */
+#results.panel.panel-default {
+    opacity: 0.65; /* Initial opacity */
+    transition: opacity 500ms 1s;
+}
+
+#results.panel.panel-default:hover {
+    opacity: 0.95; /* Opacity on hover */
+    transition-delay: 0;
+}
+
+/* Loading spinner */
+.cssCopy.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Leaflet container */
+.leaflet-container {
+    background-color: white !important;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
