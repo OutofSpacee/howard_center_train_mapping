@@ -4,7 +4,8 @@ This application was created with the intention for Howard Center Data Journalis
 
 ## TO RUN APP:
 - Download required libraries and any other necessary packages
-- Check the local directory for the .geojson file of train lines in the U.S.
+- Check the local directory for the zipped .geojson file of train lines in the U.S.
+- Unzip it and move it to the GeoJson files
 - FILL IN the "global.r" script to run desired file
   + alltrains <- st_read("xxx.geojson") . . . change xxx to file name
 - If using RStudio: click the green "Run App"" button on the top right of the scripts frame 
