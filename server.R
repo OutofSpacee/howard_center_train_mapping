@@ -500,7 +500,7 @@ server <- function(input, output, session) {
         extension <- ".geojson"
         timestamp <- format(Sys.time(), "%Y_%m_%d_%I-%M-%S_%p")
         
-        all_files <- list.files("GeoJson Files", pattern = paste0("^", base_name, "\\d*_\\d{4}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_[AP]M", extension, "$"))
+        all_files <- list.files("data/GeoJson Files", pattern = paste0("^", base_name, "\\d*_\\d{4}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_[AP]M", extension, "$"))
         
         file_numbers <- as.numeric(gsub(paste0("^", base_name, "(\\d*)_\\d{4}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_\\d{2}_[AP]M", extension, "$"),
                                         "\\1",
@@ -521,12 +521,12 @@ server <- function(input, output, session) {
       dir.create("Zipped Files", showWarnings = FALSE)
       
       new_filename <- create_unique_file()
-      geojson_path <- file.path("GeoJson Files", new_filename)
+      geojson_path <- file.path("data/GeoJson Files", new_filename)
       
       st_write(train_data(), geojson_path, driver = "GeoJSON")
       
       zip_filename <- gsub("\\.geojson$", ".zip", new_filename)
-      zip_path <- file.path("Zipped Files", zip_filename)
+      zip_path <- file.path("data/Zipped Files", zip_filename)
       
       zip::zip(zipfile = zip_path, files = geojson_path)
       

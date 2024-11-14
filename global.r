@@ -5,7 +5,7 @@ library(leaflet.extras)
 
 prepare_train_data <- function() {
   
-  alltrains <- st_read("GeoJson Files/NARN1_2024_08_01_12-13-41_PM.geojson")
+  alltrains <- st_read("data/GeoJson Files/NARN1_2024_08_01_12-13-41_PM.geojson")
   
   traindata <- st_transform(alltrains, crs = 4326)
   
